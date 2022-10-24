@@ -1,0 +1,8 @@
+Package: FielderInTheLab
+Version: 0.1
+Date: 2022-10-24
+Title: Miscellaneous function to process field data.  
+Description: Miscellaneous functions to process data acquired in the field, maybe with sensors.
+Author: Filippo Ferrario <filippo.f3rrario@gmail.com>
+Maintainer: Filippo Ferrario <filippo.f3rrario@gmail.com>
+RoxygenNote: 7.2.0

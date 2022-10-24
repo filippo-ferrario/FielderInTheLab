@@ -17,10 +17,28 @@
 #===============================================================================
 
 
+#' Correction of depth measures for tide level
+#' 
+#'  
+#' @param tidetable_df 
+#' @param observed_df
+#' @param time_tide_col
+#' @param lev_tide_col
+#' @param time_obs_col
+#' @param depth_obs_col
+#' @param depth
+#' @param date.time
+#' @param ts_tide_format
+#' @param ts_obs_format  
+#' 
+#' 
+#' 
+#' 
+#' @export
 
 
 
-depth.adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_col=NULL, time_obs_col=NULL,depth_obs_col=NULL, depth=NULL, date.time=NULL, ts_tide_format='%d/%m/%Y %H.%M', ts_obs_format=ts_tide_format) {
+depth_adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_col=NULL, time_obs_col=NULL,depth_obs_col=NULL, depth=NULL, date.time=NULL, ts_tide_format='%d/%m/%Y %H.%M', ts_obs_format=ts_tide_format) {
 
 
 
@@ -85,7 +103,7 @@ depth.adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_co
 # # date.time='2018/07/01 0:30'
 # # ts_format='%Y/%m/%d %H:%M'
 
-# depth.adjust(tidetable_df=tides,time_tide_col=1, lev_tide_col=2,depth=5,date.time='2018/07/01 1:0',ts_format='%Y/%m/%d %H:%M')
+# depth_adjust(tidetable_df=tides,time_tide_col=1, lev_tide_col=2,depth=5,date.time='2018/07/01 1:0',ts_format='%Y/%m/%d %H:%M')
 
 
 # tidetable_df=tides; observed_df=bsi2; time_tide_col = 1; lev_tide_col = 2; 
