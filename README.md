@@ -1,5 +1,8 @@
 # FielderInTheLab
- 
+
+Collection of function to support pre-processing and treatment of data acquired in the field.
+
+
 ```
 library(devtools)
 
