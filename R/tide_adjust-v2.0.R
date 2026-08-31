@@ -56,10 +56,12 @@ depth_adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_co
 
 	# check if time format are already in POSIXt
 	if (!inherits(tidetable_df[,time_tide_col],'POSIXt') & is.character(tidetable_df[,time_tide_col])) {
-		tidetable_df[,time_tide_col]<-strptime(tidetable_df[,time_tide_col],format= ts_tide_format)
+		tmp<-strptime(tidetable_df[,time_tide_col],format= ts_tide_format)
+		tidetable_df[,time_tide_col]<-as.POSIXct(tmp)
 		} 
 	if (!inherits(observed_df[,time_obs_col],'POSIXt') & is.character(observed_df[,time_obs_col])) {
-		observed_df[,time_obs_col]<-strptime(observed_df[,time_obs_col],format= ts_obs_format)
+		tmp<-strptime(observed_df[,time_obs_col],format= ts_obs_format)
+		observed_df[,time_obs_col]<-as.POSIXct(tmp)
 		} 
 
 
@@ -91,7 +93,7 @@ depth_adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_co
 			}
 
 	# make sure time is correctely formatted
-	TT$ts<-as.POSIXct( TT$ts )
+	# TT$ts<-as.POSIXct( TT$ts ) 
 	if(sum(is.na(TT$ts))>0) stop ('double check time format specification and that no missing values are present in Time column')
 	TT<-TT[order(TT$ts),]
 
@@ -110,10 +112,10 @@ depth_adjust<-function(tidetable_df,observed_df, time_tide_col=NULL, lev_tide_co
 			   names(OBS)[names(OBS)==depth_obs_col]<-'depth'
 			   names(OBS)[names(OBS)==time_obs_col]<-'ts'	
 			}
-		OBS$ts<-as.POSIXct(OBS$ts )
+		# OBS$ts<-as.POSIXct(OBS$ts )
 		# initialize result vector
 		res<-NULL
-		# loop through TT times to estimate tide levels (probably not the moste efficient coding!)
+		# loop through TT times to estimate tide levels (probably not the most efficient coding!)
 		 for (i in 1: nrow(OBS)){ #browser()
 		 	date.time<-OBS$ts[i]
 		 	p<-pred_lev(obs_time=date.time,TT)	
