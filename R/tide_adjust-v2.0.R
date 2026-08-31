@@ -26,8 +26,8 @@
 #' @param lev_tide_col either a number or a character specifying the position or the name of the column in `tidetable_df` for the tide level of the tide table
 #' @param time_obs_col either a number or a character specifying the position or the name of the column in `observed_df` for the time of the observed depths
 #' @param depth_obs_col either a number or a character specifying the position or the name of the column in `observed_df` for the observed depths
-#' @param depth
-#' @param date.time
+#' @param depth numeric. Single depth value to be adjusted
+#' @param date.time Date and time of measurement of the depth than need adjustment.
 #' @param ts_tide_format format used for time in `tidetable_df`
 #' @param ts_obs_format format used for time in `observed_df`
 #' 
