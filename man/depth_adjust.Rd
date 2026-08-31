@@ -30,6 +30,10 @@ depth_adjust(
 
 \item{depth_obs_col}{either a number or a character specifying the position or the name of the column in `observed_df` for the observed depths}
 
+\item{depth}{numeric. Single depth value to be adjusted}
+
+\item{date.time}{Date and time of measurement of the depth than need adjustment.}
+
 \item{ts_tide_format}{format used for time in `tidetable_df`}
 
 \item{ts_obs_format}{format used for time in `observed_df`}
